@@ -5,3 +5,5 @@ puts a
 
 b = 'こんにちは'
 puts b
+
+puts 5
