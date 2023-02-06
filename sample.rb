@@ -37,3 +37,24 @@ i = 10
 puts "#{i}は16進数にすると#{i.to_s(16)}です"
 
 puts "He said, \"Don't speak.\""
+
+
+#文字列の比較
+puts 'ruby' == 'ruby'
+puts 'ruby' == 'Ruby'
+puts 'ruby' != 'perl'
+puts 'ruby' != 'ruby'
+
+
+#0.5ではなく0になる。小数点以下は切り捨てられる
+puts 1 / 2
+
+#小数点以下の値が必要な場合
+puts 1.0 / 2
+
+n = 1
+puts n.to_f
+puts n.to_f / 2
+
+#以下の計算は(2 * 3) + (4 * 5) - (6 / 2)と同じ
+puts 2 * 3 + 4 * 5 - 6 / 2
