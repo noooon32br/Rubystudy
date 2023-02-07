@@ -88,3 +88,27 @@ puts 0.1r * 3r == 0.3
 
 #Rationalから普通の小数に戻したい場合
 puts (0.1r * 3.0r).to_f
+
+
+#条件1も条件2も真であれば真、それ以外は偽
+#条件1 && 条件2
+
+t1 = true
+t2 = true
+f1 = false
+
+puts t1 && t2
+puts t1 && f1
+
+#条件1か条件2のいずれかが真であれば真、両方偽であれば偽
+#条件1 || 条件2
+
+t1 = true
+f1 = false
+f2 = false
+
+puts t1 || f1
+puts f1 || f2
+
+#条件1 && 条件2 || 条件3 && 条件4
+puts t1 && t2 || f1 && f2
