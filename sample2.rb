@@ -16,3 +16,16 @@ elsif country == 'italy'
 else
   puts '???'
 end
+
+#メソッドの定義
+def add(a,b)
+  a + b
+end
+
+puts add(1,2) 
+
+#メソッド名はスネークケースで書く
+def Hello_world
+  'Hello, world'
+end
+
