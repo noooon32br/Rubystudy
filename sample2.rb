@@ -56,10 +56,54 @@ puts a
 HTML
 
 def some_method
-  <<-TEXT
-これはヒアドキュメントです。
-<<-を使うと最後の識別子をインデントさせることができます。
+  <<~TEXT
+    \ これはヒアドキュメントです。
+    \ <<-を使うと最後の識別子をインデントさせることができます。
   TEXT
 end
 
 puts some_method
+
+#<<~を使うと内部文字列のインデント部分が無視される
+
+
+name = 'Alice'
+a = <<TEXT
+ようこそ、#{name}さん！
+以下のメッセージをご覧ください。
+TEXT
+puts a
+
+#<<"TEXT"のように、識別子をダブルクオートで囲んだ場合、式展開が有効。シングルクオートで囲むと無効になる
+
+#ヒアドキュメントを直接引数として渡す（prependは渡された文字列を先頭に追加するメソッド）
+a = 'Ruby'
+a.prepend(<<TEXT)
+Java
+Python
+TEXT
+puts a
+
+#ヒアドキュメントで作成した文字列に対して、直接upcaseメソッドを呼び出す
+#(upcaseは文字列を全て大文字にするメソッド)
+b = <<TEXT.upcase
+Hello,
+Good-bye.
+TEXT
+puts b
+
+
+#ヒアドキュメントを2つ同時に使って配列を作る
+c = [<<TEXT1, <<TEXT2]
+Alice
+Bob
+TEXT1
+Matz
+Jnchito
+TEXT2
+
+#0番目の要素にはTEXT1の内容が入る
+puts c[0]
+
+#1番目の要素にはTEXT2の内容が入る
+puts c[1]
