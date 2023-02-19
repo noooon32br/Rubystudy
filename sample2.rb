@@ -123,3 +123,5 @@ puts 'Hi!' * 10
 puts String.new('Hello')
 
 puts "\u3042\u3044\u3046"
+
+
