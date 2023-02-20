@@ -43,3 +43,49 @@ puts r.class
 c = 0.3 - 0.5i
 puts c
 puts c.class
+
+puts 1 && 2 && 3
+puts 1 && nil && 3
+puts 1 && false && 3
+
+puts nil || false
+
+t1 = true
+f1 = false
+
+puts t1 and f1
+puts t1 or f1
+not t1
+
+#!は||よりも優先順位が低い
+puts !(f1) || t1
+
+#notは||よりも優先順位が低い
+puts not(f1 || t1)
+
+t1 = true
+t2 = true
+f1 = false
+
+puts t1 || t2 && f1
+puts t1 or t2 and f1
+
+def greet(country)
+  #countryがnil(またはfalse)ならメッセージを返してメソッドを抜ける
+  country or return 'countryを入力してください'
+  
+  if country == 'japan'
+    'こんにちは'
+  else
+    'Hello'
+  end
+end
+
+puts greet(nil)
+puts greet('japan')
+
+status = 'error'
+unless status == 'ok'
+  '何か異常があります'
+end
+
