@@ -85,7 +85,41 @@ puts greet(nil)
 puts greet('japan')
 
 status = 'error'
+
+#unlessの結果を変数に代入する
+message =
 unless status == 'ok'
   '何か異常があります'
+else
+  '正常です'
 end
 
+puts message
+
+puts country = 'italy'
+
+#if文を使う場合
+if country == 'japan'
+  'こんにちは'
+elsif country == 'us'
+  'Hello'
+elsif country == 'italy'
+  'Ciao'
+else
+  '???'
+end
+
+#case分を使う場合
+puts case country
+when 'japan'
+  'こんにちは'
+when 'un'
+  'Hello'
+when 'italy'
+  'Ciao'
+else
+  '???'
+end
+
+
+  
