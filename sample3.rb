@@ -122,4 +122,45 @@ else
 end
 
 
-  
+n = 11
+if n > 10
+  '10より大きい'
+else
+  '10以下'
+end
+
+n = 11
+message = n > 10 ? '10より大きい' : '10以下'
+
+puts message
+
+#引数なしの場合はcountryに'japan'を設定する
+def greet(country = 'japan')
+  if country == 'japan'
+    'こんにちは'
+  else
+    'hello'
+  end
+end
+
+puts greet
+puts greet('us')
+
+#システム日時や他のメソッドの戻り値をデフォルト値に指定する
+def foo(time = Time.now, message = bar)
+  puts "time: #{time}, message: #{message}"
+end
+
+def bar
+  'BAR'
+end
+
+foo
+
+#yが指定されなければxの値をyに設定する
+def point(x,y = x)
+  puts "x=#{x}, y=#{y}"
+end
+
+point(3)
+point(3, 10)
