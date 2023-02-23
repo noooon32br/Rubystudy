@@ -194,3 +194,35 @@ end
 puts multiple_of_three?(4)
 puts multiple_of_three?(5)
 puts multiple_of_three?(6)
+
+a = 'ruby'
+
+#upcaseだと変数aの値は変化しない
+puts a.upcase
+puts a
+
+#upcase!だと変数aの値も大文字に変わる
+puts a.upcase!
+puts a
+
+#引数の内容を変更しない
+def reverse_upcase(s)
+  s.reverse.upcase
+end
+
+s = 'ruby'
+
+puts reverse_upcase(s)
+puts s
+
+
+#通常のメソッド定義
+def greet
+  'Hello!'
+end
+
+#エンドレスメソッド定義（=の続けて処理や戻り値を書く）
+def greet = 'Hello!'
+  
+puts greet
+
