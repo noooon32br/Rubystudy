@@ -283,3 +283,9 @@ puts c
 #aは別のオブジェクトなので大文字にならない
 puts a
 
+#dateライブラリを読み込むとDateクラスが使えるようになる
+require 'date'
+puts Date.today
+
+#puts('Hello, world!')よりも
+puts 'Hello, world!'
