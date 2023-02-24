@@ -289,3 +289,4 @@ puts Date.today
 
 #puts('Hello, world!')よりも
 puts 'Hello, world!'
+
