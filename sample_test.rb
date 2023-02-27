@@ -7,10 +7,10 @@ class SampleTest < Minitest::Test
 end
 
 #aがbと等しければパスする
-assert_equal b, a
+#assert_equal b, a
 
 #aが真であればパスする
-assert a
+#assert a
 
 #aが偽であればパスする
-refute a
+#refute a
