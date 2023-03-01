@@ -101,3 +101,57 @@ puts sum
 
 #ブロックの外に出すと、sum_valueは参照できない
 
+numbers = [1, 2, 3, 4, 5]
+#ブロックの戻り値が新しい配列の各要素になる
+new_numbers = numbers.map { |n| n * 10 }
+
+puts new_numbers
+
+numbers = [1, 2, 3, 4, 5, 6]
+#ブロックの戻り値が真になった要素だけが集められる
+even_numbers = numbers.select { |n| n.even? }
+
+puts even_numbers
+
+numbers = [1, 2, 3, 4, 5, 6]
+#3の倍数を除外する（3の倍数以外を集める）
+non_multiples_of_three = numbers.reject { |n| n % 3 == 0 }
+
+puts non_multiples_of_three
+
+numbers = [1, 2, 3, 4, 5, 6]
+#ブロックの戻り値が最初に真になった要素を返す
+even_number = numbers.find { |n| n.even? }
+
+puts even_number
+
+
+numbers = [1, 2, 3, 4]
+#各要素を2倍しながら合計する
+puts numbers.sum { |n| n * 2 }
+
+
+numbers = [1, 2, 3, 4]
+#初期値に5を指定する（5+1+2+3+4=15)
+puts numbers.sum(5)
+
+#配列の要素を連結して1つの文字列にするときのメソッド
+chars = ['a', 'b', 'c']
+puts chars.join
+
+data = ['a', 2, 'b', 4]
+#配列に数値が含まれていても連結可能（to_sメソッドで文字列に変換されるため）
+puts data.join
+
+chars = ['a', 'b', 'c']
+#先頭に'>'をつけ、各要素を大文字にして連結する
+puts chars.sum('>') { |c| c.upcase }
+
+
+#&:メソッドへの書き換え
+#このコードは
+['ruby', 'java', 'python'].map { |s| s.upcase }
+#こう書き換えられる
+['ruby', 'java', 'python'].map(&:upcase)
+
+
