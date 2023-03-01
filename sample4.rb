@@ -66,3 +66,38 @@ puts "商=#{quo_rem[0]}, 余り=#{quo_rem[1]}"
 #多重代入で別々の変数として受け取る
 quotient, remainder = 14.divmod(3)
 puts "商-#{quotient}, 余り=#{remainder}"
+
+#繰り返し処理
+numbers = [1, 2, 3, 4]
+sum = 0
+numbers.each do |n|
+  sum += n
+end
+
+puts sum
+
+a = [1, 2, 3, 1, 2, 3]
+#配列から値が2の要素を削除する
+#a.delete(2)
+
+#配列から値が奇数の要素を削除する
+a.delete_if do |n|
+  n.odd?
+end
+
+puts a
+
+#偶数のみ、値を10倍にしてから加算するコード
+numbers = [1, 2, 3, 4]
+sum = 0
+numbers.each do |n|
+  #sum_valueはブロック内で初めて登場した変数のため、ブロック内でのみ有効
+  sum_value = n.even? ? n * 10 : n
+  #sumはブロックの外で作成されたため、ブロックの内部でも参照可能
+  sum += sum_value
+end
+
+puts sum
+
+#ブロックの外に出すと、sum_valueは参照できない
+
