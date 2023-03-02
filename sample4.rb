@@ -155,3 +155,28 @@ puts chars.sum('>') { |c| c.upcase }
 ['ruby', 'java', 'python'].map(&:upcase)
 
 
+
+#範囲オブジェクト
+1..5
+1...5
+'a'..'e'
+'a'...'e'
+
+puts (1..5).class
+puts (1...5).class
+
+#..を使うと5が範囲に含まれる（1以上5以下）
+range = 1..5
+puts range.include?(0)
+puts range.include?(1)
+puts range.include?(4.9)
+puts range.include?(5)
+puts range.include?(6)
+
+#...を使うと5が範囲に含まれない（1以上5未満）
+range = 1...5
+puts range.include?(0)
+puts range.include?(1)
+puts range.include?(4.9)
+puts range.include?(5)
+puts range.include?(6)
