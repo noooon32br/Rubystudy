@@ -180,3 +180,67 @@ puts range.include?(1)
 puts range.include?(4.9)
 puts range.include?(5)
 puts range.include?(6)
+
+#不等号を使う場合
+def liquid?(temperature)
+  #0度以上100度未満であれば液体、と判定したい
+  0 <= temperature && temperature < 100
+end
+
+puts liquid?(-1)
+puts liquid?(100)
+
+#範囲オブジェクトを使う場合
+def liquid?(temperature)
+  (0...100).include?(temperature)
+end
+
+puts liquid?(-1)
+puts liquid?(99)
+
+
+def charge(age)
+  case age
+  #0歳から5歳までの場合
+  when 0..5
+    0
+  #6歳から12歳までの場合
+  when 6..12
+    300
+  #13歳から18歳までの場合
+  when 13..18
+    600
+  #それ以外の場合
+  else
+    1000
+  end
+end
+
+puts charge(3)
+puts charge(16)
+
+#値が連続する配列を作成する
+puts (1..5).to_a
+puts (1...5).to_a
+
+puts ('a'..'e').to_a
+puts ('a'...'e').to_a
+puts ('bad'..'bag').to_a
+puts ('bad'...'bag').to_a
+
+#範囲オブジェクトを配列に変換してから繰り返し処理を行う
+numbers = (1..4).to_a
+puts sum = 0
+numbers.each { |n| sum += n }
+puts sum
+
+sum = 0
+#範囲オブジェクトに対して直接eachメソッドを呼び出す
+(1..4).each { |n| sum += n }
+puts sum
+
+numbers = []
+#1から10まで2回ごとに繰り返し処理を行う
+(1..10).step(2) { |n| numbers << n }
+puts numbers
+
