@@ -244,3 +244,13 @@ numbers = []
 (1..10).step(2) { |n| numbers << n }
 puts numbers
 
+
+a = [1, 2, 3, 4, 5]
+puts a.values_at(0, 2, 4)
+#最後の要素を取得する
+puts a[a.size - 1]
+
+#配列の最後の要素を取得
+puts a.last(2)
+#配列の先頭の要素を取得
+puts a.first(2)
