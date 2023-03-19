@@ -17,3 +17,4 @@ end
 car = Car.new
 car.move("右", 5)
 
+

@@ -254,3 +254,23 @@ puts a[a.size - 1]
 puts a.last(2)
 #配列の先頭の要素を取得
 puts a.first(2)
+
+a = [1, 2, 3, 4, 5]
+#2つ目から3要素分を100で置き換える
+a[1, 3] = 100
+puts a
+
+#複数の値を追加することができる
+a = []
+a.push(1)
+a.push(2, 3)
+puts a
+
+a = [1, 2, 3, 1, 2, 3]
+#値が2である要素を削除する（削除した値が戻り値になる）
+puts a.delete(2)
+puts a
+
+#存在しない値を指定するとnilが返る
+puts a.delete(5)
+puts a
