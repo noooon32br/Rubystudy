@@ -274,3 +274,14 @@ puts a
 #存在しない値を指定するとnilが返る
 puts a.delete(5)
 puts a
+
+a = [1]
+b = [2, 3]
+puts a.concat(b)
+
+#aは変更される（破壊的）
+puts a
+
+#bは変更されない
+puts b
+
