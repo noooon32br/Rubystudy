@@ -285,3 +285,25 @@ puts a
 #bは変更されない
 puts b
 
+#|は和集合を求める演算子
+a = [1, 2, 3]
+b = [3, 4, 5]
+puts a | b
+
+#-は差集合を求める演算子
+a = [1, 2, 3]
+b = [3, 4, 5]
+puts a - b
+
+#積集合を求める演算子
+puts a & b
+
+#本格的な集合演算をする場合
+require 'set'
+
+a = Set[1, 2, 3]
+b = Set[3, 4, 5]
+
+puts a | b
+puts a - b
+puts a & b
